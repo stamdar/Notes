@@ -82,7 +82,7 @@ Revert to Automatic Fan Control
 
 
 # 3rd party PCIe Response
-If a 3rd part PCIe device such as a graphics card or NIC is installed to the server, this will alter the default fan speed. This feature can be disabled.
+If a 3rd party PCIe device such as a graphics card or NIC is installed to the server, this will alter the default fan speed. This feature can be disabled.
 
 Disable 3rd Party PCIe Response
 ```PowerShell
