@@ -33,7 +33,7 @@ Set All Fans (0xff) to 16% (0x10)
 ```PowerShell
 .\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> sdr type temperature
 ```
-output
+Output:
 ```
 Inlet Temp       | 04h | ok  |  7.1 | 21 degrees C
 Exhaust Temp     | 01h | ok  |  7.1 | 34 degrees C
@@ -49,7 +49,7 @@ Temp             | 0Fh | ok  |  3.2 | 38 degrees C
 ```PowerShell
 .\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> sdr elist full
 ```
-output
+Output:
 ```
 Fan1 RPM         | 30h | ok  |  7.1 | 5280 RPM
 Fan2 RPM         | 31h | ok  |  7.1 | 5160 RPM
@@ -102,11 +102,11 @@ View 3rd Party PCIe Response State
 - Result2= ... 01 00 00 (Disabled)
 
 
-## Report Power Supply Output
+## Report Power Supply Output:
 ```PowerShell
 .\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> sdr type ‘Power Supply’
 ```
-output
+Output:
 ```
 PS Redundancy    | 74h | ns  |  7.1 | No Reading
 Status           | 62h | ok  | 10.1 | Presence detected
@@ -117,7 +117,7 @@ Status           | 63h | ok  | 10.2 | Presence detected
 ```PowerShell
 .\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> delloem powermonitor
 ```
-output
+Output:
 ```
 Power Tracking Statistics
 Statistic      : Cumulative Energy Consumption
