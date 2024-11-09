@@ -27,9 +27,7 @@ Set All Fans (0xff) to 16% (0x10)
 	- **Bad temperature**: A temperature of 80-85°C (176–185°F) or above is generally considered bad.
 
 
-# View Temperatures 
-
-## Report Temperatures
+# Report Temperatures
 ```PowerShell
 .\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> sdr type temperature
 ```
@@ -45,7 +43,7 @@ Temp             | 0Fh | ok  |  3.2 | 38 degrees C
 - **Temp** - The temperature of CPU 1
 - **Temp** - The temperature of CPU 2
 
-## Report Only Temp, Volt & Fan Sensors
+# Report Temp, RPM, CPU,  Volt, and Fan Sensors
 ```PowerShell
 .\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> sdr elist full
 ```
