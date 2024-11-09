@@ -78,6 +78,11 @@ Revert to Automatic Fan Control
 ```
 - min fan speed is 35%
 
+Set higher min fan speed
+```PowerShell
+.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0x30 0x02 0xff <offset_value>
+```
+- Replace `<offset_value>` with a hex value that represents the desired offset (e.g., 0x32 for around 50%)
 
 # 3rd party PCIe Response
 If a 3rd party PCIe device such as a graphics card or NIC is installed to the server, this will alter the default fan speed. This feature can be disabled.
