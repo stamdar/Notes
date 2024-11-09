@@ -2,7 +2,7 @@
 # Before Starting
 [Install Dell IPMI Tool](https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=m63f3)
 
-CD to the tool directory:
+Open PowerShell and CD to the tool directory:
 ```PowerShell
 cd "C:\Program Files (x86)\Dell\SysMgt\bmc"
 ```
