@@ -26,33 +26,6 @@ Set All Fans (0xff) to 16% (0x10)
 	- **Normal workload**: A safe temperature range is typically between 40–65°C (104–149°F).
 	- **Bad temperature**: A temperature of 80-85°C (176–185°F) or above is generally considered bad.
 
-# Set Automatic Fan Speed
-Revert to Automatic Fan Control
-```PowerShell
-.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0x30 0x01 0x01
-```
-- min fan speed is 35%
-
-# 3rd party PCIe Response
-If a 3rd part PCIe device such as a graphics card or NIC is installed to the server, this will alter the default fan speed. This feature can be disabled.
-
-Disable 3rd Party PCIe Response
-```PowerShell
-.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00
-```
-
-Enable 3rd Party PCIe Response
-```PowerShell
-.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x00 0x00 0x00
-```
-
-View 3rd Party PCIe Response State
-```PowerShell
-.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0xce 0x01 0x16 0x05 0x00 0x00 0x00
-```
-- Result1= ... 00 00 00 (Enabled)
-- Result2= ... 01 00 00 (Disabled)
-
 
 # View Temperatures 
 
@@ -100,6 +73,35 @@ Pwr Consumption  | 77h | ok  |  7.1 | 224 Watts
 ```
 
 
+# Set Automatic Fan Speed
+Revert to Automatic Fan Control
+```PowerShell
+.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0x30 0x01 0x01
+```
+- min fan speed is 35%
+
+
+# 3rd party PCIe Response
+If a 3rd part PCIe device such as a graphics card or NIC is installed to the server, this will alter the default fan speed. This feature can be disabled.
+
+Disable 3rd Party PCIe Response
+```PowerShell
+.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00
+```
+
+Enable 3rd Party PCIe Response
+```PowerShell
+.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x00 0x00 0x00
+```
+
+View 3rd Party PCIe Response State
+```PowerShell
+.\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> raw 0x30 0xce 0x01 0x16 0x05 0x00 0x00 0x00
+```
+- Result1= ... 00 00 00 (Enabled)
+- Result2= ... 01 00 00 (Disabled)
+
+
 ## Report Power Supply Output
 ```PowerShell
 .\ipmitool.exe -I lanplus -H <iDracs ip> -U <username> -P <password> sdr type ‘Power Supply’
@@ -133,4 +135,3 @@ Start Time     : Fri Nov  8 19:11:59 2024
 Peak Time      : Fri Nov  8 19:31:37 2024
 Peak Reading   : 4.3 A
 ```
-
